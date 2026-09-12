@@ -25,6 +25,9 @@ app.use(session({
 
 app.use('/', require('./routes/pages'));
 app.use('/', require('./routes/auth'));
+app.use('/catways', require('./routes/catways'));
+app.use('/catways/:id/reservations', require('./routes/reservations'));
+app.use('/users', require('./routes/users'));
 
 const PORT = process.env.PORT || 3000;
 
@@ -33,3 +36,4 @@ if (require.main === module) {
 }
 
 module.exports = app;
+
