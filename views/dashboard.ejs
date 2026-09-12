@@ -10,5 +10,95 @@
   <form method="post" action="/logout">
     <button type="submit">Se deconnecter</button>
   </form>
+
+  <% if (message) { %>
+    <p><strong><%= message %></strong></p>
+  <% } %>
+
+  <p>
+    <a href="/liste-catways">Voir la liste des catways</a> |
+    <a href="/liste-reservations">Voir la liste des reservations</a>
+  </p>
+
+  <h2>Utilisateurs</h2>
+
+  <h3>Creer un utilisateur</h3>
+  <form method="post" action="/dashboard/utilisateurs">
+    <input type="text" name="name" placeholder="Nom" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Mot de passe" required>
+    <button type="submit">Creer</button>
+  </form>
+
+  <h3>Modifier un utilisateur</h3>
+  <form method="post" action="/dashboard/utilisateurs/modifier">
+    <input type="text" name="id" placeholder="Id utilisateur" required>
+    <input type="text" name="name" placeholder="Nouveau nom">
+    <input type="email" name="email" placeholder="Nouvel email">
+    <input type="password" name="password" placeholder="Nouveau mot de passe">
+    <button type="submit">Modifier</button>
+  </form>
+
+  <h3>Supprimer un utilisateur</h3>
+  <form method="post" action="/dashboard/utilisateurs/supprimer">
+    <input type="text" name="id" placeholder="Id utilisateur" required>
+    <button type="submit">Supprimer</button>
+  </form>
+
+  <h2>Catways</h2>
+
+  <h3>Creer un catway</h3>
+  <form method="post" action="/dashboard/catways">
+    <input type="number" name="catwayNumber" placeholder="Numero" required>
+    <select name="type" required>
+      <option value="long">long</option>
+      <option value="short">short</option>
+    </select>
+    <input type="text" name="catwayState" placeholder="Etat" required>
+    <button type="submit">Creer</button>
+  </form>
+
+  <h3>Modifier l'etat d'un catway</h3>
+  <form method="post" action="/dashboard/catways/modifier">
+    <input type="text" name="id" placeholder="Id catway" required>
+    <input type="text" name="catwayState" placeholder="Nouvel etat" required>
+    <button type="submit">Modifier</button>
+  </form>
+
+  <h3>Supprimer un catway</h3>
+  <form method="post" action="/dashboard/catways/supprimer">
+    <input type="text" name="id" placeholder="Id catway" required>
+    <button type="submit">Supprimer</button>
+  </form>
+
+  <h3>Afficher les details d'un catway</h3>
+  <form method="get" action="/catway/rechercher">
+    <input type="text" name="id" placeholder="Id catway" required>
+    <button type="submit">Afficher</button>
+  </form>
+
+  <h2>Reservations</h2>
+
+  <h3>Enregistrer une reservation</h3>
+  <form method="post" action="/dashboard/reservations">
+    <input type="text" name="catwayId" placeholder="Id catway" required>
+    <input type="text" name="clientName" placeholder="Nom du client" required>
+    <input type="text" name="boatName" placeholder="Nom du bateau" required>
+    <input type="date" name="checkIn" required>
+    <input type="date" name="checkOut" required>
+    <button type="submit">Enregistrer</button>
+  </form>
+
+  <h3>Supprimer une reservation</h3>
+  <form method="post" action="/dashboard/reservations/supprimer">
+    <input type="text" name="id" placeholder="Id reservation" required>
+    <button type="submit">Supprimer</button>
+  </form>
+
+  <h3>Afficher les details d'une reservation</h3>
+  <form method="get" action="/reservation/rechercher">
+    <input type="text" name="id" placeholder="Id reservation" required>
+    <button type="submit">Afficher</button>
+  </form>
 </body>
 </html>

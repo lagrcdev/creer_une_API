@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Liste des catways</title>
+</head>
+<body>
+  <h1>Liste des catways</h1>
+  <a href="/dashboard">Retour au tableau de bord</a>
+  <table border="1">
+    <tr>
+      <th>Numero</th>
+      <th>Type</th>
+      <th>Etat</th>
+    </tr>
+    <% catways.forEach(function(catway) { %>
+    <tr>
+      <td><%= catway.catwayNumber %></td>
+      <td><%= catway.type %></td>
+      <td><%= catway.catwayState %></td>
+    </tr>
+    <% }); %>
+  </table>
+</body>
+</html>

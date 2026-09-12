@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Liste des reservations</title>
+</head>
+<body>
+  <h1>Liste des reservations</h1>
+  <a href="/dashboard">Retour au tableau de bord</a>
+  <table border="1">
+    <tr>
+      <th>Catway</th>
+      <th>Client</th>
+      <th>Bateau</th>
+      <th>Check-in</th>
+      <th>Check-out</th>
+    </tr>
+    <% reservations.forEach(function(reservation) { %>
+    <tr>
+      <td><%= reservation.catwayNumber %></td>
+      <td><%= reservation.clientName %></td>
+      <td><%= reservation.boatName %></td>
+      <td><%= reservation.checkIn.toDateString() %></td>
+      <td><%= reservation.checkOut.toDateString() %></td>
+    </tr>
+    <% }); %>
+  </table>
+</body>
+</html>

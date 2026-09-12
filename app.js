@@ -28,12 +28,11 @@ app.use('/', require('./routes/auth'));
 app.use('/catways', require('./routes/catways'));
 app.use('/catways/:id/reservations', require('./routes/reservations'));
 app.use('/users', require('./routes/users'));
+app.use('/', require('./routes/dashboardActions'));
 
 const PORT = process.env.PORT || 3000;
 
-if (require.main === module) {
-  app.listen(PORT, () => console.log('Serveur demarre sur le port ' + PORT));
-}
+app.listen(PORT, () => console.log('Serveur demarre sur le port ' + PORT));
 
 module.exports = app;
 

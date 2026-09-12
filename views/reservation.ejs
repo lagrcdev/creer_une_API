@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Detail reservation</title>
+</head>
+<body>
+  <h1>Detail de la reservation</h1>
+  <a href="/dashboard">Retour au tableau de bord</a>
+  <% if (reservation) { %>
+    <p>Catway : <%= reservation.catwayNumber %></p>
+    <p>Client : <%= reservation.clientName %></p>
+    <p>Bateau : <%= reservation.boatName %></p>
+    <p>Check-in : <%= reservation.checkIn.toDateString() %></p>
+    <p>Check-out : <%= reservation.checkOut.toDateString() %></p>
+  <% } else { %>
+    <p>Reservation introuvable</p>
+  <% } %>
+</body>
+</html>

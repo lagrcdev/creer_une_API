@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Detail catway</title>
+</head>
+<body>
+  <h1>Detail du catway</h1>
+  <a href="/dashboard">Retour au tableau de bord</a>
+  <% if (catway) { %>
+    <p>Numero : <%= catway.catwayNumber %></p>
+    <p>Type : <%= catway.type %></p>
+    <p>Etat : <%= catway.catwayState %></p>
+  <% } else { %>
+    <p>Catway introuvable</p>
+  <% } %>
+</body>
+</html>

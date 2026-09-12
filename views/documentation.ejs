@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Documentation API</title>
+</head>
+<body>
+  <h1>Documentation de l'API</h1>
+  <a href="/">Retour a l'accueil</a>
+
+  <h2>Vue d'ensemble</h2>
+  <p>Cette API permet a la capitainerie du port de Russell de gerer les catways (emplacements d'amarrage) et les reservations. Elle est privee : toutes les routes necessitent d'etre connecte, sauf mention contraire.</p>
+
+  <h2>Tutoriel</h2>
+  <p>Pour utiliser l'API, connectez-vous d'abord via le formulaire de la page d'accueil. Une fois connecte, une session est ouverte et toutes les requetes suivantes utilisent cette session.</p>
+
+  <h2>Exemples</h2>
+  <p>GET /catways : renvoie la liste de tous les catways au format JSON.</p>
+  <p>POST /catways avec { "catwayNumber": 10, "type": "long", "catwayState": "bon etat" } : cree un nouveau catway.</p>
+  <p>GET /catways/:id/reservations : renvoie les reservations d'un catway.</p>
+  <p>POST /catways/:id/reservations avec { "clientName": "...", "boatName": "...", "checkIn": "...", "checkOut": "..." } : cree une reservation pour ce catway.</p>
+
+  <h2>Glossaire</h2>
+  <p>Catway : emplacement d'amarrage pour un bateau.</p>
+  <p>Reservation : occupation d'un catway par un client sur une periode donnee.</p>
+</body>
+</html>
